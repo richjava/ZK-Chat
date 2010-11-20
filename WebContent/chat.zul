@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?page title="ZK Chat"?>
+<window id="win" title="ZK Chat Room" width="300px" border="normal"
+	apply="tw.com.cruisy.chat.web.ChatComposer">
+	<grid id="chatGrid" visible="false">
+		<columns>
+			<column width="100%" />
+		</columns>
+		<rows>
+			<row>
+				<grid id="msgGrid" height="300px">
+					<rows id="rows" />
+				</grid>
+			</row>
+			<row>
+				<hbox id="inputHb">
+					<textbox id="msgTb" style="width:230px" />
+					<button id="sendBtn" label="Send" />
+				</hbox>
+			</row>
+			<row>
+				<hbox id="userInfoHb">
+					<button id="exitBtn" label="Exit" />
+					<space />
+				</hbox>
+			</row>
+			<row>
+				<hbox id="footerHb">
+					<image id="newpmImg" src="/images/newpm.png"
+						visible="false" />
+					<div id="infoDiv" visible="false">
+						<label id="IMLbl" style="color:green" />
+						<timer id="timer" running="false"
+							repeats="false" delay="3000"
+							onTimer='infoDiv.setVisible(false);' />
+					</div>
+				</hbox>
+			</row>
+
+		</rows>
+	</grid>
+	<grid id="loginGrid">
+		<columns>
+			<column width="100%" />
+		</columns>
+		<rows>
+			<row>
+				<hbox style="padding:10px;">
+					Name:
+					<textbox id="nameTb" style="width:160px;"
+						constraint="no empty" />
+					<button id="loginBtn" label="Enter" />
+				</hbox>
+			</row>
+			<row>
+				<hbox>
+					<checkbox id="IMCb" checked="true" />
+					<label value="Enable instant messaging" />
+				</hbox>
+			</row>
+		</rows>
+	</grid>
+</window>
+
+
+

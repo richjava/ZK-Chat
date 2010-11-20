@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zk>
+	<device-config>
+		<device-type>ajax</device-type>
+		<timeout-uri></timeout-uri><!-- An empty URL can cause the browser to reload
+			the same URL -->
+	</device-config>
+	<desktop-config>
+		<desktop-timeout>-1</desktop-timeout><!-- no timeout -->
+	</desktop-config>
+	<system-config>
+		<disable-event-thread>false</disable-event-thread>
+	</system-config>
+</zk>
