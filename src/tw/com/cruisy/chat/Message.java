@@ -1,5 +1,9 @@
 package tw.com.cruisy.chat;
 
+/**
+ * @author Richard Lovell
+ * A POJO representing a chat message.
+ */
 public class Message {
 	private String _content;
 	private String _sender;

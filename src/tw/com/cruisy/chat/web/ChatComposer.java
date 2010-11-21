@@ -1,53 +1,34 @@
 package tw.com.cruisy.chat.web;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
-
 import tw.com.cruisy.chat.ChatRoom;
 import tw.com.cruisy.chat.ChatUser;
 import tw.com.cruisy.chat.Message;
 import tw.com.cruisy.chat.MessageBoard;
 import tw.com.cruisy.chat.web.comp._ChatRow;
-import org.zkforge.ckez.CKeditor;
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zk.ui.Desktop;
-import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.Path;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zk.ui.event.EventQueue;
-import org.zkoss.zk.ui.event.EventQueues;
-import org.zkoss.zk.ui.event.ForwardEvent;
 import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
-import org.zkoss.zul.Button;
 import org.zkoss.zul.Checkbox;
-import org.zkoss.zul.Column;
-import org.zkoss.zul.Columns;
 import org.zkoss.zul.Div;
 import org.zkoss.zul.Grid;
 import org.zkoss.zul.Hbox;
-import org.zkoss.zul.Html;
 import org.zkoss.zul.Image;
 import org.zkoss.zul.Label;
-import org.zkoss.zul.ListModel;
-import org.zkoss.zul.Messagebox;
-import org.zkoss.zul.Row;
-import org.zkoss.zul.RowRenderer;
 import org.zkoss.zul.Rows;
-import org.zkoss.zul.Separator;
-import org.zkoss.zul.SimpleListModel;
-import org.zkoss.zul.Space;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Timer;
-import org.zkoss.zul.Toolbarbutton;
-import org.zkoss.zul.Vbox;
 import org.zkoss.zul.Window;
 
+/**
+ * @author Richard Lovell
+ * Main composer for the chat application.
+ */
 public class ChatComposer extends GenericForwardComposer {
 	// auto-wired components
 	private Window win;
