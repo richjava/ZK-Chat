@@ -110,9 +110,9 @@ public class ChatComposer extends GenericForwardComposer {
 	 * @throws InterruptedException
 	 */
 	public void onBroadcast(Event event) throws InterruptedException {
-
 		HashMap<String, Message> hm = (HashMap<String, Message>) event.getData();
 		final Message msg = hm.get("msg");
+		//if a user is entering or leaving chatroom
 		if(msg.isNotify()){
 			displayUserInfo(_chatRoom.getChatUsers());
 		}
@@ -238,7 +238,6 @@ public class ChatComposer extends GenericForwardComposer {
 			//refresh UI
 			displayChatGrid();
 			appendMessage(msg);
-			displayUserInfo(_chatRoom.getChatUsers());
 		} else {
 			alert("This username is already in use. Please choose another.");
 		}
@@ -254,6 +253,7 @@ public class ChatComposer extends GenericForwardComposer {
 		loginGrid.setVisible(false);
 		chatGrid.setVisible(true);
 		inputHb.setVisible(true);
+		displayUserInfo(_chatRoom.getChatUsers());
 	}
 
 	/**

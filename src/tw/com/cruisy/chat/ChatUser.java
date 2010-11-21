@@ -65,7 +65,6 @@ public class ChatUser extends Thread {
 					if (_msg == null) {
 						Threads.sleep(500);// Update each 0.5 seconds
 					} else {
-
 						Executions.activate(_desktop);
 						try {
 							process();
