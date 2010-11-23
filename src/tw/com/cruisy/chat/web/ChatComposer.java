@@ -6,7 +6,9 @@ import tw.com.cruisy.chat.ChatRoom;
 import tw.com.cruisy.chat.ChatUser;
 import tw.com.cruisy.chat.Message;
 import tw.com.cruisy.chat.MessageBoard;
-import tw.com.cruisy.chat.web.comp._ChatRow;
+import tw.com.cruisy.chat.web.comp.ChatRow;
+import tw.com.cruisy.chat.web.comp.MessageDlg;
+
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Path;
 import org.zkoss.zk.ui.Sessions;
@@ -50,7 +52,7 @@ public class ChatComposer extends GenericForwardComposer {
 	private ChatUser _chatUser;
 	private String _nickname;
 	private boolean _IMEnabled;
-	private _MessageDlg _msgDlg;
+	private MessageDlg _msgDlg;
 	private int _noOfUsers;
 	private int _noOfIMs;
 
@@ -110,7 +112,7 @@ public class ChatComposer extends GenericForwardComposer {
 			newpmImg.setVisible(true);
 			newpmImg.addEventListener("onClick", new EventListener() {
 				public void onEvent(Event e) throws Exception {
-					_msgDlg = new _MessageDlg(msg, _nickname, _chatRoom);
+					_msgDlg = new MessageDlg(msg, _nickname, _chatRoom);
 					_msgDlg.setParent(win);
 					_msgDlg.setRecieve();
 					newpmImg.setVisible(false);
@@ -285,7 +287,7 @@ public class ChatComposer extends GenericForwardComposer {
 	 * @param msg
 	 */
 	private void appendMessage(Message msg) {
-		_ChatRow row = new _ChatRow(msg, _chatRoom, _chatUser);
+		ChatRow row = new ChatRow(msg, _chatRoom, _chatUser);
 		rows.appendChild(row);
 		Clients.scrollIntoView(row);
 	}
